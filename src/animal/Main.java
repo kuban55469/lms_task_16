@@ -29,14 +29,63 @@ public class Main {
             }
         }
 
-        Shark[] sharks = {
-                new Shark("Toothy")
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        Animal[] animals1 = {
+                new Shark("Baby"),
+                new Shark("Rip"),
+                new Shark("Rip"),
+                new Shark("Rip"),
+                new Shark("Rip"),
+                new Shark("Rip"),
+                new Shark("Rip"),
+                new Turtle("Donatella"),
+                new Turtle("Donatella"),
+                new Turtle("Donatella"),
+                new Turtle("Mikelanjela"),
+                new Turtle("Rafael"),
+                new Turtle("Rafael"),
+                new Turtle("Rafael"),
+                new Turtle("Rafael"),
+                new Eagle("Sam"),
+                new Eagle("Alex"),
+                new Eagle("Macho"),
+                new Eagle("Macho"),
+                new Eagle("Macho"),
         };
-        Turtle[] turtles = {
-                new Turtle("Nataniel")
-        };
-        Eagle[] eagles = {
-                new Eagle("Shot")
-        };
+
+        int sh = 0;
+        int tr = 0;
+        int ea = 0;
+//
+
+        for (Animal animal : animals1) {
+            animal.eat();
+            if (animal instanceof Shark){
+                ((Shark) animal).attack();
+                sh++;
+            } else if (animal instanceof Turtle) {
+                ((Turtle) animal).swim();
+                tr++;
+            }else if (animal instanceof  Eagle){
+                ((Eagle) animal).fly();
+                ea++;
+            }
+        }
+
+        System.out.println();
+
+        Shark[] sharks = new Shark[sh];
+        System.out.println("Sharks is num: " + sh);
+
+        System.out.println();
+
+        Turtle[] turtles = new Turtle[tr];
+        System.out.println("Turtle is num: " + tr);
+
+        System.out.println();
+
+        Eagle[] eagles = new Eagle[ea];
+        System.out.println("Eagles is num: " + ea);
     }
 }
